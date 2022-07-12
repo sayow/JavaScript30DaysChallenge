@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Scoped CSS Variables and JS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
+  <h2>Updating CSS Variables with <span class='hl'>JS</span></h2>
 
   <div class="controls">
     <label for="spacing">Spacing:</label>
@@ -18,9 +23,26 @@
     <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+  <img
+    src="https://images.unsplash.com/photo-1603237568326-e7c5adde84ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=367&q=80">
 
   <style>
+	  :root {
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    }
+
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
+
+    .hl {
+      color: var(--base);
+    }
+
 
     /*
       misc styles, nothing to do with CSS variables
@@ -28,9 +50,9 @@
 
     body {
       text-align: center;
-      background: #193549;
+      background-image: linear-gradient(to right, rgba(255, 132, 0, 0.587), rgb(0, 81, 255));
       color: white;
-      font-family: 'helvetica neue', sans-serif;
+      font-family: 'Architects Daughter', cursive;
       font-weight: 100;
       font-size: 50px;
     }
@@ -45,6 +67,10 @@
   </style>
 
   <script>
+    const inputs~= document.querySelector('.controls inputs');
+    function handleUpdate() {
+
+    }
   </script>
 
 </body>
